@@ -39,8 +39,6 @@ def a_is_subset_of_b(a: str, b: str) -> bool:
     return all(map(lambda segment: segment in b, a))
 
 
-# For digits with 6 segments, the missing segments in each digit could be "ce"
-# You can check which segment is c by looking at which segment can be found in the digit for 1
 # The 6-segment digit that shares segments with 1 are 0,9.
 # The remaining 6-segment digit is 6.
 # The 5-segment digit that shares all of its segments with 6 is 5.
