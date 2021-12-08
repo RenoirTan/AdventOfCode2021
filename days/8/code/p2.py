@@ -42,7 +42,7 @@ def a_is_subset_of_b(a: str, b: str) -> bool:
 # The 6-segment digit that shares segments with 1 are 0,9.
 # The remaining 6-segment digit is 6.
 # The 5-segment digit that shares all of its segments with 6 is 5.
-# If one of the remaining 5-segment digits shares all of its segments with 2 of the unknown 6-segment digits,
+# If one of the remaining 5-segment digits shares all of its segments with one of the 2 unknown 6-segment digits,
 #   the 5-segment digit is 3 and the 6-segment digit is 9.
 # The remaining 6-segment digit is 0.
 # The last 5-segment digit is 2.
