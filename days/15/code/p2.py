@@ -71,21 +71,34 @@ def clone_2d(original: t.List[t.List[int]]) -> t.List[t.List[int]]:
     return result
 
 
-def extend_matrix(original: t.List[t.List[int]], nx: int, ny: int, limit: int, lowest: int) -> t.List[t.List[int]]:
+def extend_matrix(
+    original: t.List[t.List[int]],
+    nx: int,
+    ny: int,
+    limit: int,
+    lowest: int
+) -> t.List[t.List[int]]:
     olen_y = len(original)
     olen_x = len(original[0])
     result = clone_2d(original)
+    # mx and my are the offsets from the original matrix
     for mx in range(nx):
         for my in range(ny):
+            # if mx and my are both 0, ignore
             if my + mx == 0:
                 continue
+            # create a new copy of the original matrix but transforming it as the task requires
             clone = clone_2d(original)
             for y in range(olen_y):
                 for x in range(olen_x):
                     clone[y][x] = wrap(clone[y][x]+my+mx, limit, lowest)
+            # create new rows in the resulting matrix where necessary
             if mx == 0:
                 for _ in range(olen_y):
                     result.append([])
+            # extend each row,
+            # y is the offset
+            # sy is the y-coordinate where the clone should reside
             for y in range(olen_y):
                 sy = y + my*olen_y
                 result[sy].extend(clone[y])
