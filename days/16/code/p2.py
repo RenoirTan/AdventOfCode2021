@@ -161,7 +161,7 @@ def _eval_5_0(bit_rep: str, length: int) -> t.Tuple[int, int]:
         values.append(vsum)
         end += dend
     if len(values) != 2:
-        raise ValueError(f"Fuck {len(values)=}")
+        raise ValueError(f"{len(values)=}")
     return values[0] > values[1], length
 
 
@@ -169,7 +169,7 @@ def _eval_5_1(bit_rep: str, n_subpackets: int) -> t.Tuple[int, int]:
     values = []
     end = 0
     if n_subpackets != 2:
-        raise ValueError(f"Fuck: {n_subpackets=}")
+        raise ValueError(f"{n_subpackets=}")
     for _ in range(n_subpackets):
         vsum, dend = _eval_packet(bit_rep[end:])
         values.append(vsum)
@@ -198,7 +198,7 @@ def _eval_6_0(bit_rep: str, length: int) -> t.Tuple[int, int]:
         values.append(vsum)
         end += dend
     if len(values) != 2:
-        raise ValueError(f"Fuck {len(values)=}")
+        raise ValueError(f"{len(values)=}")
     return values[0] < values[1], length
 
 
@@ -206,7 +206,7 @@ def _eval_6_1(bit_rep: str, n_subpackets: int) -> t.Tuple[int, int]:
     values = []
     end = 0
     if n_subpackets != 2:
-        raise ValueError(f"Fuck: {n_subpackets=}")
+        raise ValueError(f"{n_subpackets=}")
     for _ in range(n_subpackets):
         vsum, dend = _eval_packet(bit_rep[end:])
         values.append(vsum)
@@ -235,7 +235,7 @@ def _eval_7_0(bit_rep: str, length: int) -> t.Tuple[int, int]:
         values.append(vsum)
         end += dend
     if len(values) != 2:
-        raise ValueError(f"Fuck {len(values)=}")
+        raise ValueError(f"{len(values)=}")
     return values[0] == values[1], length
 
 
@@ -243,7 +243,7 @@ def _eval_7_1(bit_rep: str, n_subpackets: int) -> t.Tuple[int, int]:
     values = []
     end = 0
     if n_subpackets != 2:
-        raise ValueError(f"Fuck: {n_subpackets=}")
+        raise ValueError(f"{n_subpackets=}")
     for _ in range(n_subpackets):
         vsum, dend = _eval_packet(bit_rep[end:])
         values.append(vsum)
